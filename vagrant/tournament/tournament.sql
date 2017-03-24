@@ -1,0 +1,10 @@
+CREATE TABLE player (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE match (
+  id SERIAL PRIMARY KEY,
+  winner INTEGER REFERENCES player(id) NOT NULL,
+  loser INTEGER REFERENCES player(id) NOT NULL
+);
